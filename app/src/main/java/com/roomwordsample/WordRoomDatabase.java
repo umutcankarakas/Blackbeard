@@ -8,7 +8,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
-@Database(entities = {Word.class}, version = 1)
+@Database(entities = {Word.class}, version = 2, exportSchema = false)
 public abstract class WordRoomDatabase extends RoomDatabase {
 
     public abstract WordDao wordDao();
@@ -22,7 +22,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     //Creating database here
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            WordRoomDatabase.class, "word_database")
+                            WordRoomDatabase.class, "word_database34")
                             .build();
 
                 }
@@ -52,9 +52,9 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(final Void... params) {
             mDao.deleteAll();
-            Word word = new Word("Hello");
+            Word word = new Word("Hello", "Detail 1", "1");
             mDao.insert(word);
-            word = new Word("World");
+            word = new Word("World", "Detail 2", "1");
             mDao.insert(word);
             return null;
         }
