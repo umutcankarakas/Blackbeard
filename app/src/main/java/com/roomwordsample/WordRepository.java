@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 
 import java.util.List;
 
-public class Repository {
+public class WordRepository {
 
     private WordDao mWordDao;
     private LiveData<List<Word>> mAllWords;
@@ -20,6 +20,7 @@ public class Repository {
     LiveData<List<Word>> getAllWords() {
         return mAllWords;
     }
+
 
     public void insert (Word word) {
         new insertAsyncTask(mWordDao).execute(word);

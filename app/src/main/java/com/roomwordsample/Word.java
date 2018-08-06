@@ -12,8 +12,8 @@ public class Word {
     @NonNull
     @ColumnInfo(name = "word")
     private String mWord;
-
-    public Word(@NonNull String word) {this.mWord = word;}
+    
+    public Word(@NonNull String word ) {this.mWord = word;}
 
     public String getWord(){ return this.mWord;}
 }
