@@ -9,46 +9,46 @@ import android.support.annotation.NonNull;
 public class Word {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    public int id;
-
-    @NonNull
-    @ColumnInfo(name = "tit")
-    private String tit;
-
-    @NonNull
-    @ColumnInfo(name = "desc")
-    private String desc;
-
-    @NonNull
     @ColumnInfo(name = "userid")
-    private String userid;
+    public int userid;
 
-    public Word( @NonNull String tit, @NonNull String desc, @NonNull String userid) {
-        this.tit = tit;
-        this.desc = desc;
-        this.userid = userid;
+    @NonNull
+    @ColumnInfo(name = "name")
+    private String name;
+
+    @NonNull
+    @ColumnInfo(name = "mail")
+    private String mail;
+
+    @NonNull
+    @ColumnInfo(name = "pass")
+    private String pass;
+
+    public Word( @NonNull String name, @NonNull String mail, @NonNull String pass) {
+        this.name = name;
+        this.mail = mail;
+        this.pass = pass;
     }
 
 
 
 
     @NonNull
-    public String getTit() {
-        return tit;
+    public String getName() {
+        return name;
     }
 
     @NonNull
-    public String getDesc() {
-        return desc;
+    public String getMail() {
+        return mail;
     }
 
     @NonNull
-    public String getUserid() {
-        return userid;
+    public String getPass() {
+        return pass;
     }
 
     public String toString() {
-        return new StringBuilder(tit).append("\n").append(desc).append("\n").append(userid).toString();
+        return new StringBuilder(name).append("\n").append(mail).append("\n").append(pass).toString();
     }
 }
